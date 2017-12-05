@@ -1,15 +1,14 @@
-declared-services:
-    Compose-for-MySQL-tj:
-      label: compose-for-mysql
-      plan:  Standard
+#declared-services:
+#    Compose-for-MySQL-tj:
+#      label: compose-for-mysql
+#      plan:  Standard
 applications:
 - path: .
   memory: 32M
   instances: 1
-  domain: mybluemix.net
   name: api-gateau
-  host: api-gateau
-  services:
-  - Compose-for-MySQL-tj
-  - Auto-Scaling-lm
+  host: api-gateau-${random-word}
+#  services:
+#  - Compose-for-MySQL-tj
+#  - Auto-Scaling-lm
   
