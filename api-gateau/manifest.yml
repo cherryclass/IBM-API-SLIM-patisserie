@@ -1,0 +1,19 @@
+declared-services:
+    Compose-for-MySQL-tj:
+      label: compose-for-mysql
+      plan:  Standard
+applications:
+- path: .
+  memory: 32M
+  instances: 1
+  domain: mybluemix.net
+  name: api-gateau
+  host: api-gateau
+  services:
+  - Compose-for-MySQL-tj
+  - Auto-Scaling-lm
+  
+
+  claudio.cimelli@education.gouv.fr
+francois.bocquet@education.gouv.fr
+thierry.koscielniak@lecnam.net

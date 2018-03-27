@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 32M
+  instances: 1
+  domain: mybluemix.net
+  name: cli-gateau
+  host: cli-gateau
+
+  
