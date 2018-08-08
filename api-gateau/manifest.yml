@@ -12,8 +12,3 @@ applications:
   services:
   - Compose-for-MySQL-tj
   - Auto-Scaling-lm
-  
-
-  claudio.cimelli@education.gouv.fr
-francois.bocquet@education.gouv.fr
-thierry.koscielniak@lecnam.net
