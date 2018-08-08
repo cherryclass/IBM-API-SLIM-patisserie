@@ -12,3 +12,4 @@ applications:
   services:
   - Compose-for-MySQL-tj
   - Auto-Scaling-lm
+
