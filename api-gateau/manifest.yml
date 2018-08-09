@@ -6,9 +6,8 @@ applications:
 - path: .
   memory: 32M
   instances: 1
-  domain: mybluemix.net
-  name: api-gateau
-  host: api-gateau
+  name: api-patisserie
+  route: api-patisserie-${random-word}
   services:
   - Compose-for-MySQL-tj
   - Auto-Scaling-lm
