@@ -1,8 +1,0 @@
-applications:
-- path: .
-  memory: 32M
-  instances: 1
-  name: cli-gateau
-  route: cli-patisserie-${random-word}
-
-  
