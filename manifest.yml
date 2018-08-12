@@ -1,0 +1,19 @@
+#declared-services:
+#    api-slim-patisserie-mysql:
+#      label: compose-for-mysql
+#      plan:  Standard
+applications:
+- name: cli-gateau
+  memory: 32M
+  instances: 1
+  route: cli-patisserie-${random-word}
+  path: ./client/
+- name: api-patisserie
+  memory: 32M
+  instances: 1
+  route: api-patisserie-${random-word}
+  path: ./serveur/
+#  services:
+#  - api-slim-patisserie-mysql
+#  - Auto-Scaling-lm
+  
