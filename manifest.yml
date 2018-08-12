@@ -1,14 +1,14 @@
-declared-services:
-    api-slim-patisserie-mysql:
-      label: compose-for-mysql
-      plan:  Standard
+#declared-services:
+#    api-slim-patisserie-mysql:
+#      label: compose-for-mysql
+#      plan:  Standard
 applications:
 - path: .
   memory: 32M
   instances: 1
   name: api-patisserie
   route: api-patisserie-${random-word}
-  services:
-  - api-slim-patisserie-mysql
-  - Auto-Scaling-lm
+#  services:
+#  - api-slim-patisserie-mysql
+#  - Auto-Scaling-lm
 
