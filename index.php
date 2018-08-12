@@ -12,13 +12,18 @@ $app = new \Slim\App;
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$app->options('/{routes:.+}', function ($request, $response, $args) {
+    return $response;
+});
+
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
     return $response
-            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Origin', 'http://mysite')
             ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
             ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 });
+
 
 $app->post('/gateau', function(Request $request, Response $response){
 	$id = $request->getQueryParam('id');	
@@ -85,6 +90,14 @@ function getGateaux()
 	return json_encode($result, JSON_PRETTY_PRINT);
 
 }
+// Catch-all route to serve a 404 Not Found page if none of the routes match
+// NOTE: make sure this route is defined last
+$app->map(['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], '/{routes:.+}', function($req, $res) {
+    $handler = $this->notFoundHandler; // handle using the default Slim page not found handler
+    return $handler($req, $res);
+});
+
+
 
 $app->run();
    
