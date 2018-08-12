@@ -3,6 +3,7 @@ applications:
   memory: 32M
   instances: 1
   name: cli-gateau
+  buildpack: php_buildpack
   route: cli-patisserie-${random-word}
 
   
