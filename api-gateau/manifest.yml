@@ -8,6 +8,7 @@ applications:
   instances: 1
   name: api-patisserie
   route: api-patisserie-${random-word}
+  buildpack: php_buildpack
   services:
   - Compose-for-MySQL-tj
   - Auto-Scaling-lm
