@@ -7,6 +7,7 @@ applications:
   memory: 32M
   instances: 1
   route: api-patisserie-${random-word}
+  buildpack: php_buildpack
 #  services:
 #  - api-slim-patisserie-mysql
 #  - Auto-Scaling-lm
