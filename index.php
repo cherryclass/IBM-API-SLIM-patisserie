@@ -6,32 +6,6 @@ use \Psr\Http\Message\ResponseInterface as Response;
 use \Firebase\JWT\JWT;
 
 
-/**
- * @SWG\Swagger(
- *     schemes={"https"},
- *    host="mybluemix.net",
- *   	basePath="/gateau",
- *     @SWG\Info(
- *         version="1.1.0",
- *         title="API Gatêau",
- *         description="Enregistrement et affichage de Gâteaux",
- *         @SWG\Contact(
- *             email="luc.frebourg@ac-versailles.fr"
- *         ),
- *         @SWG\License(
- *             name="Apache 2.0",
- *             url="http://www.apache.org/licenses/LICENSE-2.0.html"
- *         )
- *     ),
-  * )
- */
-
-/**
- * @SWG\Tag(
- *   name="gateau",
- *   description="Operations about gateau",
- * )
- */
 
 $app = new \Slim\App;
 
@@ -39,56 +13,12 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-/**
- * @SWG\Post(
- *   path="/gateau",
-   * tags={"gateau"},
- *   summary="Inserer un gateau",
- *   description="Inserer un gateau",
- *    @SWG\Parameter(
-     *         name="id",
-     *         in="header",
-     *         required=true,
-     *         type="integer"
-     *     ),
-  *    @SWG\Parameter(
-     *         name="nom",
-     *         in="header",
-     *         required=true,
-     *         type="string"
-     *     ),
- *   @SWG\Response(
- *     response=200,
- *     description="successful operation",
- *		@SWG\Schema(
- *       type="object"
- *     ),
-*   )
- * )
- */
 $app->post('/gateau', function(Request $request, Response $response){
 	$id = $request->getQueryParam('id');	
 	$nom = $request->getQueryParam('nom');	
 	return setGateau($id, $nom);
 });
-/**
- * @SWG\Get(
- *   path="/gateau/{id}",
-   * tags={"gateau"},
- *   summary="Obtenir un gateau",
- *   description="Obtenir un gateau",
- *    @SWG\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         type="integer"
-     *     ),
- *   @SWG\Response(
- *     response=200,
- *     description="successful operation"		
- *   	)
- * )
- */ 
+
 $app->get('/gateau/{id}', function(Request $request, Response $response){
 	$id = $request->getAttribute('id');
 	return getGateau($id);
