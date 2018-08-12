@@ -1,5 +1,5 @@
 declared-services:
-    Compose-for-MySQL-tj:
+    api-slim-patisserie-mysql:
       label: compose-for-mysql
       plan:  Standard
 applications:
@@ -9,6 +9,6 @@ applications:
   name: api-patisserie
   route: api-patisserie-${random-word}
   services:
-  - Compose-for-MySQL-tj
+  - api-slim-patisserie-mysql
   - Auto-Scaling-lm
 
