@@ -1,14 +1,10 @@
-#declared-services:
-#    api-slim-patisserie-mysql:
-#      label: compose-for-mysql
-#      plan:  Standard
 applications:
-- name: api-patisserie
+- name: patisserie-slim
   memory: 512M
   instances: 1
-  route: api-patisserie-${random-word}
+  routes:
+  - route: patisserie-slim-${random-word}
   buildpack: php_buildpack
-#  services:
-#  - api-slim-patisserie-mysql
-#  - Auto-Scaling-lm
+  services:
+  - patisserie-mysql
   
