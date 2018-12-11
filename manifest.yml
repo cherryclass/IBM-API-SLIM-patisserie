@@ -2,8 +2,7 @@ applications:
 - name: patisserie-slim
   memory: 512M
   instances: 1
-  routes: 
-    - route: patisserie-slim-${random-word}.eu-de.mybluemix.net
+  random-route: true
   buildpack: php_buildpack
   services:
   - patisserie-mysql
